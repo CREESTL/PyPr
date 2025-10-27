@@ -1,9 +1,16 @@
 # PyPr
 
-This repo contains a single `pyproject.toml` file. You can copy it and use in your projects.  
-See the contents of the file for details.
+Make your Python development a little easier.
+
+## Contents
+
+This repo contains configuration files for various tools you might want to use if you code in Python.
 
 ## How to use
+
+### `pyproject.toml`
+
+**NOTE:**  This step is required for all the others
 
 1. Install [uv](https://github.com/astral-sh/uv)
 
@@ -31,3 +38,15 @@ See the contents of the file for details.
     ```shell
     uv run ruff check --fix
     ```
+
+### `pre-commit-config.yaml`
+
+1. Install [pre-commit](https://github.com/pre-commit/pre-commit)
+2. Copy `.pre-commit-config.yaml` to the root of your project
+3. Install listed hooks
+
+    ```shell
+    pre-commit install
+    ```
+
+4. Now pre-commit hooks will run on each `git commit`
