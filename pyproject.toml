@@ -1,0 +1,78 @@
+[project]
+name = "pypr"
+version = "0.1.0"
+description = "Minimal setup for a Python project"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+# Depencencies used in development but not used in production should be installed in different group.
+# Use `uv sync --only-dev` to sync only these.
+[dependency-groups]
+dev = [
+    "pyright>=1.1.406",
+    "ruff>=0.14.1",
+]
+
+# For reference see: https://docs.astral.sh/ruff/settings
+
+[tool.ruff]
+line-length = 100
+fix = true
+indent-width = 4
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "tab"
+line-ending = "auto"
+skip-magic-trailing-comma = false
+docstring-code-format = false
+
+[tool.ruff.lint]
+preview = true
+select = [
+    "A",
+    "ANN",
+    "ARG",
+    "ASYNC",
+    "B",
+    "BLE",
+    "COM",
+    "C4",
+    "C90",
+    "D",
+    "DOC",
+    "DTZ",
+    "DJ",
+    "EM",
+    "ERA",
+    "FA",
+    "FBT",
+    "FAST",
+    "FIX",
+    "G",
+    "I",
+    "ICN",
+    "ISC",
+    "LOG",
+    "NPY",
+    "PD",
+    "PERF",
+    "PIE",
+    "PT",
+    "PYI",
+    "Q",
+    "RSE",
+    "RET",
+    "S",
+    "SLF",
+    "TC",
+    "TID",
+]
+
+# Some rules conflict. Ignore them.
+ignore = ["D203", "D213", "COM812", "D206"]
+
+# Use Google-style doc comments.
+[tool.ruff.lint.pydocstyle]
+convention = "google"
