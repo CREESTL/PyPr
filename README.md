@@ -1,6 +1,6 @@
 # PyPr
 
-This repo contains a single `pyproject.toml` file you can copy and use in your projects.  
+This repo contains a single `pyproject.toml` file. You can copy it and use in your projects.  
 See the contents of the file for details.
 
 ## How to use
@@ -11,7 +11,7 @@ See the contents of the file for details.
     pip install uv
     ```
 
-2. Copy `pyproject.toml` file to root of your project
+2. Copy `pyproject.toml` file to the root of your project
 3. Create a virtual environment and activate it
 
     ```shell
