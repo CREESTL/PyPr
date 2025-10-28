@@ -50,3 +50,7 @@ This repo contains configuration files for various tools you might want to use i
     ```
 
 4. Now pre-commit hooks will run on each `git commit`
+
+## Name
+
+PyPr is short for "Python Project".
