@@ -24,7 +24,6 @@ indent-width = 4
 
 [tool.ruff.format]
 quote-style = "double"
-indent-style = "tab"
 line-ending = "auto"
 skip-magic-trailing-comma = false
 docstring-code-format = false
