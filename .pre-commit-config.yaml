@@ -1,29 +1,41 @@
-# Ruff format and lint
 repos:
-- repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.14.2
-  hooks:
-    - id: ruff-check
-      args: [ --fix ]
-    - id: ruff-format
 
 # Basic file hygiene
-repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v5.0.0
+  rev: v6.0.0
   hooks:
+    - id: check-added-large-files
+    - id: check-ast
     - id: check-merge-conflict
     - id: check-toml
+    - id: check-yaml
     - id: end-of-file-fixer
+    - id: mixed-line-ending
     - id: trailing-whitespace
 
-# Static type analyzer
-# NOTE: Requires pyright to be installed
+# Ruff format and lint
 - repo: local
   hooks:
-    - id: pyright
-      name: pyright
-      entry: pyright
+    - id: ruff
+      name: ruff
+      entry: uv run ruff
       language: system
-      types: [python]
+      types_or: [python, pyi]
+      args: ["check", "--fix"]
+    - id: ruff-format
+      name: ruff-format
+      entry: uv run ruff
+      language: system
+      types_or: [python, pyi]
+      args: ["format"]
+
+# Static type analyzer
+- repo: local
+  hooks:
+    - id: mypy
+      name: mypy
+      entry: uv run mypy
+      language: system
+      types_or: [python, pyi]
+      require_serial: true
       pass_filenames: false
