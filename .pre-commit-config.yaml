@@ -39,3 +39,13 @@ repos:
       types_or: [python, pyi]
       require_serial: true
       pass_filenames: false
+
+# Export dependencies to file
+- repo: local
+  hooks:
+    - id: uv-lock
+      name: uv lock
+      entry: uv lock
+      language: system
+      pass_filenames: false
+      always_run: true
