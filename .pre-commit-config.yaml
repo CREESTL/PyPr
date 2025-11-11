@@ -16,7 +16,7 @@ repos:
 # Ruff format and lint
 - repo: local
   hooks:
-    - id: ruff
+    - id: ruff-check
       name: ruff
       entry: uv run ruff
       language: system
