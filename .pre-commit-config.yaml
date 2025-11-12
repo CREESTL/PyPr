@@ -21,14 +21,14 @@ repos:
       entry: uv run ruff
       language: system
       types_or: [python, pyi]
-      args: ["check", "--fix", "."]
+      args: ["check", "--fix"]
       pass_filenames: false
     - id: ruff-format
       name: ruff-format
       entry: uv run ruff
       language: system
       types_or: [python, pyi]
-      args: ["format", "."]
+      args: ["format"]
       pass_filenames: false
 
 # Static type analyzer
