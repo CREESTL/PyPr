@@ -4,41 +4,44 @@ repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v6.0.0
   hooks:
+    # Prevent committing very large files by mistake
     - id: check-added-large-files
+    # Verify all Python files have valid syntax (AST parse check)
     - id: check-ast
+    # Detect leftover Git merge conflict markers
     - id: check-merge-conflict
+    # Ensure all TOML files are syntactically valid
     - id: check-toml
+    # Ensure all YAML files are syntactically valid
     - id: check-yaml
+     # Ensure each file ends with a single newline
     - id: end-of-file-fixer
+    # Normalize line endings (avoid CRLF/LF mix)
     - id: mixed-line-ending
+    # Remove trailing whitespace from all lines
     - id: trailing-whitespace
 
 # Ruff format and lint
-- repo: local
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.14.4
   hooks:
+    # Run Ruff linter on staged files only, auto-fix issues where possible
     - id: ruff-check
-      name: ruff
-      entry: uv run ruff
-      language: system
-      types_or: [python, pyi]
-      args: ["check", "--fix"]
-      pass_filenames: false
+      args: ["--fix"]
+    # Run Ruff formatter on staged files only
     - id: ruff-format
-      name: ruff-format
-      entry: uv run ruff
-      language: system
-      types_or: [python, pyi]
-      args: ["format"]
-      pass_filenames: false
+      args: []
 
 # Static type analyzer
 - repo: local
   hooks:
+  # Run type checking on all files (not only staged)
     - id: mypy
       name: mypy
       entry: uv run mypy
       language: system
       types_or: [python, pyi]
+      # Run in a single process. No parallel execution.
       require_serial: true
       pass_filenames: false
 
@@ -49,5 +52,6 @@ repos:
       name: uv lock
       entry: uv lock
       language: system
+      # Lock file should be generated over the whole repo, not just staged files.
       pass_filenames: false
       always_run: true
