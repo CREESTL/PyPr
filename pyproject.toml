@@ -38,7 +38,6 @@ select = [
     "ASYNC",
     "B",
     "BLE",
-    "COM",
     "C4",
     "C90",
     "D",
