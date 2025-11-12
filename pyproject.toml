@@ -71,7 +71,7 @@ select = [
 ]
 
 # Some rules conflict. Ignore them.
-ignore = ["D203", "D213", "COM812", "D206"]
+ignore = ["D203", "D213", "D206"]
 
 # Use Google-style doc comments.
 [tool.ruff.lint.pydocstyle]
