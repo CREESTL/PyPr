@@ -34,16 +34,16 @@ docstring-code-format = false
 [tool.ruff.lint]
 preview = true
 select = [
-    "B",      # flake8-bugbear — likely bugs / best-practices
-    "ANN",    # typing/annotations — keep if you use static typing
+    "B",      # likely bugs / best-practices
+    "ANN",    # typing/annotations
     "ARG",    # unused function args
     "ASYNC",  # async/await anti-patterns
-    "C90",    # cyclomatic complexity (tune threshold separately)
-    "D",      # pydocstyle — docstring rules
+    "C90",    # cyclomatic complexity
+    "D",      # docstring rules
     "G",      # logging-format correctness
     "I",      # import ordering / issues
     "PERF",   # performance checks
-    "S",      # security (Bandit) rules
+    "S",      # security rules
     "TC",     # type-checking import rules
 ]
 
