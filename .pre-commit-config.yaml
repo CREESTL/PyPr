@@ -16,8 +16,11 @@ repos:
     - id: check-yaml
      # Ensure each file ends with a single newline
     - id: end-of-file-fixer
-    # Normalize line endings (avoid CRLF/LF mix)
+    # Normalize line endings.
+    # Use LF line ending for shell scripts to work on Linux.
     - id: mixed-line-ending
+      args: ['--fix=lf']
+      files: '\.sh$'
     # Remove trailing whitespace from all lines
     - id: trailing-whitespace
 
