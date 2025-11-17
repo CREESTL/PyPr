@@ -34,14 +34,16 @@ docstring-code-format = false
 [tool.ruff.lint]
 select = [ "ALL" ]
 ignore = [
-    "D100",     # pydocstyle: undocumented-public-module
-    "D101",     # pydocstyle: undocumented-public-class
-    "D102",     # pydocstyle: undocumented-public-method
-    "D103",     # pydocstyle: undocumented-public-function
-    "D104",     # pydocstyle: undocumented-public-package
-    "D105",     # pydocstyle: undocumented-magic-method
-    "D106",     # pydocstyle: undocumented-public-nested-class
-    "D107",     # pydocstyle: undocumented-public-init
+    # ==== Use these to check if comments are present in all required places
+    # "D100",     # pydocstyle: undocumented-public-module
+    # "D101",     # pydocstyle: undocumented-public-class
+    # "D102",     # pydocstyle: undocumented-public-method
+    # "D103",     # pydocstyle: undocumented-public-function
+    # "D104",     # pydocstyle: undocumented-public-package
+    # "D105",     # pydocstyle: undocumented-magic-method
+    # "D106",     # pydocstyle: undocumented-public-nested-class
+    # "D107",     # pydocstyle: undocumented-public-init
+    # ====
     "D203",     # pydocstyle: one-blank-line-before-class
     "D213",     # pydocstyle: multi-line-summary-second-line
     "ANN002",	# flake8-annotations: missing-type-args
