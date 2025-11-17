@@ -42,6 +42,7 @@ repos:
     - id: mypy
       name: mypy
       entry: uv run mypy
+      args: [.]
       language: system
       types_or: [python, pyi]
       # Run in a single process. No parallel execution.
