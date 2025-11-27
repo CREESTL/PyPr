@@ -38,7 +38,6 @@ repos:
 # Static type analyzer
 - repo: local
   hooks:
-  # Run type checking on all files (not only staged)
     - id: mypy
       name: mypy
       entry: uv run mypy
@@ -47,7 +46,8 @@ repos:
       types_or: [python, pyi]
       # Run in a single process. No parallel execution.
       require_serial: true
-      pass_filenames: false
+      # Run type checking only on staged files.
+      pass_filenames: true
 
 # Export dependencies to file
 - repo: local
@@ -56,6 +56,6 @@ repos:
       name: uv lock
       entry: uv lock
       language: system
-      # Lock file should be generated over the whole repo, not just staged files.
+      # Lock file should be generated over the whole repo, not only staged files.
       pass_filenames: false
       always_run: true
