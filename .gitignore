@@ -1,5 +1,6 @@
 *
 !.gitignore
 !pyproject.toml
+!Makefile
 !README.md
 !.pre-commit-config.yaml
